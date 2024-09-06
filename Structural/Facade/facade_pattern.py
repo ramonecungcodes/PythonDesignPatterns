@@ -1,30 +1,32 @@
+"""Module providing an example of the Facade design pattern."""
+
 class ExtractCsv():
-    def load():
+    def load(self):
         print(f"Data loaded from CSV file.")
 
 
 class ExtractExcel():
-    def load():
+    def load(self):
         print(f"Data loaded from Excel file.")
 
 
 class ExtractS3():
-    def load():
+    def load(self):
         print(f"Data loaded from S3 bucket.")
 
 
 class ExtractAzureBlobStorage():
-    def load():
+    def load(self):
         print(f"Data loaded from Azure Blob.")
 
 
 class TransformData():
-    def load():
+    def load(self):
         print(f"Data transformed.")
 
 
 class LoadDataToDatabase():
-    def load():
+    def load(self):
         print(f"Data loaded to database table!")
 
 
