@@ -1,3 +1,5 @@
+"""Module providing an example of the Singleton design pattern."""
+
 class DatabaseConnection():
     """ Demonstrates a class that will only ever instantiate one object. """
 

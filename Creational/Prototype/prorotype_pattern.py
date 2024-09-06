@@ -1,3 +1,6 @@
+"""Module providing an example of the Prototype design pattern."""
+
+
 from abc import ABC, abstractmethod
 
 

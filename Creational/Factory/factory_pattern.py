@@ -1,3 +1,5 @@
+"""Module providing an example of the Factory design pattern."""
+
 from abc import ABC, abstractmethod
 from enum import Enum
 

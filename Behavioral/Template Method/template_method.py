@@ -1,3 +1,6 @@
+"""Module providing an example of the Template Method design pattern."""
+
+
 from abc import ABC, abstractmethod
 
 
