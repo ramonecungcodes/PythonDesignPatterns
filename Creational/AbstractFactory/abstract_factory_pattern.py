@@ -1,8 +1,12 @@
+"""Module providing an example of the Abstract Factory design pattern."""
+
 from abc import ABC, abstractmethod
 from enum import Enum
 
 
 class ComputerEquipmentInterface(ABC):
+    """Interface that defines functionality for computers."""
+
     @property
     @abstractmethod
     def name(self) -> str:
@@ -18,6 +22,8 @@ class ComputerEquipmentInterface(ABC):
 
 
 class MonitorEquipmentInterface(ABC):
+    """Interface that defines functionality for monitors."""
+
     @property
     @abstractmethod
     def name(self) -> str:
@@ -33,6 +39,8 @@ class MonitorEquipmentInterface(ABC):
 
 
 class WebcamEquipmentInterface(ABC):
+    """Interface that defines functionality for webcames."""
+
     @property
     @abstractmethod
     def name(self) -> str:
@@ -48,6 +56,8 @@ class WebcamEquipmentInterface(ABC):
 
 
 class MacMini(ComputerEquipmentInterface):
+    """Concrete definition of a type of computer."""
+
     name = "Mac Mini"
 
     def turn_on(self):
@@ -58,6 +68,8 @@ class MacMini(ComputerEquipmentInterface):
 
 
 class MacbookAir(ComputerEquipmentInterface):
+    """Concrete definition of a type of computer."""
+
     name = "Macbook Air"
 
     def turn_on(self):
@@ -68,6 +80,8 @@ class MacbookAir(ComputerEquipmentInterface):
 
 
 class MacbookPro(ComputerEquipmentInterface):
+    """Concrete definition of a type of computer."""
+
     name = "Macbook Pro"
 
     def turn_on(self):
@@ -78,6 +92,8 @@ class MacbookPro(ComputerEquipmentInterface):
 
 
 class Monitor4k(MonitorEquipmentInterface):
+    """Concrete definition of a type of monitor."""
+
     name = "4k Monitor"
 
     def turn_on(self):
@@ -88,6 +104,8 @@ class Monitor4k(MonitorEquipmentInterface):
 
 
 class DualMonitors(MonitorEquipmentInterface):
+    """Concrete definition of a type of monitor."""
+
     name = "Dual 4k Monitors"
 
     def turn_on(self):
@@ -98,6 +116,8 @@ class DualMonitors(MonitorEquipmentInterface):
 
 
 class Webcam1080p(WebcamEquipmentInterface):
+    """Concrete definition of a type of webcam."""
+
     name = "1080p Webcam"
 
     def turn_on(self):
@@ -108,6 +128,8 @@ class Webcam1080p(WebcamEquipmentInterface):
 
 
 class Webcam4k(WebcamEquipmentInterface):
+    """Concrete definition of a type of webcam."""
+
     name = "4k Webcam"
 
     def turn_on(self):
@@ -118,6 +140,8 @@ class Webcam4k(WebcamEquipmentInterface):
 
 
 class EmployeeEquipmentType(Enum):
+    """Defines the various classes of employee based on equipment."""
+
     REMOTE = 1
     ONSITE = 2
     EXECUTIVE = 3
@@ -126,9 +150,10 @@ class EmployeeEquipmentType(Enum):
 
 class EquipmentFactoryInterface(ABC):
     """ Abstract factory """
+
     @property
     @abstractmethod
-    def employee_equipment_type():
+    def employee_equipment_type(self):
         pass
 
     @abstractmethod
@@ -159,6 +184,8 @@ class RemoteEquipmentFactory(EquipmentFactoryInterface):
 
 
 class OnsiteEquipmentFactory(EquipmentFactoryInterface):
+    """ Factory """
+
     employee_equipment_type = EmployeeEquipmentType.ONSITE
 
     def define_monitor(self):
@@ -172,6 +199,8 @@ class OnsiteEquipmentFactory(EquipmentFactoryInterface):
 
 
 class ExecutiveEquipmentFactory(EquipmentFactoryInterface):
+    """ Factory """
+
     employee_equipment_type = EmployeeEquipmentType.EXECUTIVE
 
     def define_monitor(self):
@@ -185,6 +214,8 @@ class ExecutiveEquipmentFactory(EquipmentFactoryInterface):
 
 
 class ContractorEquipmentFactory(EquipmentFactoryInterface):
+    """ Factory """
+
     employee_equipment_type = EmployeeEquipmentType.CONTRACTOR
 
     def define_monitor(self):
@@ -198,6 +229,8 @@ class ContractorEquipmentFactory(EquipmentFactoryInterface):
 
 
 def demo_abstract_factory():
+    """Test out the functionality of the classes defined above."""
+
     new_employee_equipment = ExecutiveEquipmentFactory()
 
     computer = new_employee_equipment.define_computer()
