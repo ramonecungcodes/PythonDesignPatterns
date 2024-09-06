@@ -5,7 +5,7 @@ from enum import Enum
 class ComputerEquipmentInterface(ABC):
     @property
     @abstractmethod
-    def name() -> str:
+    def name(self) -> str:
         pass
 
     @abstractmethod
@@ -20,7 +20,7 @@ class ComputerEquipmentInterface(ABC):
 class MonitorEquipmentInterface(ABC):
     @property
     @abstractmethod
-    def name() -> str:
+    def name(self) -> str:
         pass
 
     @abstractmethod
@@ -35,7 +35,7 @@ class MonitorEquipmentInterface(ABC):
 class WebcamEquipmentInterface(ABC):
     @property
     @abstractmethod
-    def name() -> str:
+    def name(self) -> str:
         pass
 
     @abstractmethod
