@@ -10,15 +10,15 @@ class ComputerEquipmentInterface(ABC):
     @property
     @abstractmethod
     def name(self) -> str:
-        pass
+        """Getter for the property 'name'"""
 
     @abstractmethod
     def turn_on(self):
-        pass
+        """Define functionality for turning on the instance of a computer."""
 
     @abstractmethod
     def turn_off(self):
-        pass
+        """Define functionality for turning of the instance of a computer."""
 
 
 class MonitorEquipmentInterface(ABC):
@@ -27,15 +27,15 @@ class MonitorEquipmentInterface(ABC):
     @property
     @abstractmethod
     def name(self) -> str:
-        pass
+        """Getter for the property 'name'"""
 
     @abstractmethod
     def turn_on(self):
-        pass
+        """Define functionality for turning on the instance of a monitor."""
 
     @abstractmethod
     def turn_off(self):
-        pass
+        """Define functionality for turning off the instance of a monitor."""
 
 
 class WebcamEquipmentInterface(ABC):
@@ -44,15 +44,15 @@ class WebcamEquipmentInterface(ABC):
     @property
     @abstractmethod
     def name(self) -> str:
-        pass
+        """Getter for the property 'name'"""
 
     @abstractmethod
     def turn_on(self):
-        pass
+        """Define functionality for turning on the instance of a webcam."""
 
     @abstractmethod
     def turn_off(self):
-        pass
+        """Define functionality for turning off the instance of a webcam."""
 
 
 class MacMini(ComputerEquipmentInterface):
@@ -154,19 +154,19 @@ class EquipmentFactoryInterface(ABC):
     @property
     @abstractmethod
     def employee_equipment_type(self):
-        pass
+        """A property that defines what class of equipment an employee can get."""
 
     @abstractmethod
     def define_monitor(self) -> MonitorEquipmentInterface:
-        pass
+        """Create an instance that represents a monitor."""
 
     @abstractmethod
     def define_webcam(self) -> WebcamEquipmentInterface:
-        pass
+        """Create an instance that represents a webcam."""
 
     @abstractmethod
     def define_computer(self) -> ComputerEquipmentInterface:
-        pass
+        """Create an instance that represents a computer."""
 
 
 class RemoteEquipmentFactory(EquipmentFactoryInterface):
@@ -178,7 +178,7 @@ class RemoteEquipmentFactory(EquipmentFactoryInterface):
 
     def define_computer(self):
         return MacbookAir()
-    
+
     def define_webcam(self):
         return Webcam1080p()
 
@@ -190,10 +190,10 @@ class OnsiteEquipmentFactory(EquipmentFactoryInterface):
 
     def define_monitor(self):
         return DualMonitors()
-    
+
     def define_computer(self):
         return MacMini()
-    
+
     def define_webcam(self):
         return Webcam1080p()
 
@@ -205,10 +205,10 @@ class ExecutiveEquipmentFactory(EquipmentFactoryInterface):
 
     def define_monitor(self):
         return DualMonitors()
-    
+
     def define_computer(self):
         return MacMini()
-    
+
     def define_webcam(self):
         return Webcam1080p()
 
@@ -220,10 +220,10 @@ class ContractorEquipmentFactory(EquipmentFactoryInterface):
 
     def define_monitor(self):
         return Monitor4k()
-    
+
     def define_computer(self):
         return MacMini()
-    
+
     def define_webcam(self):
         return Webcam1080p()
 
