@@ -150,7 +150,7 @@ class RemoteEquipmentFactory(EquipmentFactoryInterface):
 
     def define_monitor(self):
         return Monitor4k()
-    
+
     def define_computer(self):
         return MacbookAir()
     
