@@ -10,11 +10,15 @@ class DatabaseConnection():
 
 
 def demo_singleton_pattern():
+    """Demo the Singleton design pattern as implemented using the classes above"""
+
     first_database_connection = DatabaseConnection()
     second_database_connection = DatabaseConnection()
 
-    print(f"Is the first database connection the same instance as the second? {first_database_connection is second_database_connection}")
-    print(f"The internal ID of the first database connection is {id(first_database_connection)} and the ID of the second is {id(second_database_connection)}")
+    print("Is the first database connection the same instance as the second? "\
+          f"{first_database_connection is second_database_connection}")
+    print(f"The internal ID of the first database connection is {id(first_database_connection)} "\
+          f"and the ID of the second is {id(second_database_connection)}")
 
 
 if __name__ == "__main__":
