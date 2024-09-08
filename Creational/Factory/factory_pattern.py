@@ -9,11 +9,11 @@ class DeliveryInterface(ABC):
 
     @abstractmethod
     def get_package(self) -> None:
-        pass
+        """Provides functionality to get a package that needs to be delivered"""
 
     @abstractmethod
     def dropoff_package(self) -> None:
-        pass
+        """Provides functionality to deliver a package in our posession"""
 
 
 class UpsDelivery(DeliveryInterface):
@@ -29,10 +29,10 @@ class UpsDelivery(DeliveryInterface):
 class FedExDelivery(DeliveryInterface):
     """ Concrete implementation of the delivery interface """
 
-    def get_package() -> None:
+    def get_package(self) -> None:
         print("FedEx now has the package!")
 
-    def dropoff_package() -> None:
+    def dropoff_package(self) -> None:
         print("FedEx has delivered the package!")
 
 
@@ -47,16 +47,21 @@ class InHouseDelivery(DeliveryInterface):
 
 
 class DeliveryType(Enum):
+    """Provides types of deliveries that can be made"""
     DOMESTIC = 1
     INTERNATIONAL = 2
     LOCAL = 3
 
-
+# pylint: disable=locally-disabled, too-few-public-methods
 class DeliveryFactory():
-    """ Class that provides factory functionality. It creates instances of DeliveryInterface subclasses. """
+    """
+    Class that provides factory functionality. It creates instances of 
+    DeliveryInterface subclasses
+    """
 
     @staticmethod
     def create_delivery_service(delivery_type: DeliveryType) -> DeliveryInterface:
+        """Creates an object based on DeliveryInterface based on DeliberyType"""
         match delivery_type:
             case DeliveryType.DOMESTIC:
                 return UpsDelivery()
