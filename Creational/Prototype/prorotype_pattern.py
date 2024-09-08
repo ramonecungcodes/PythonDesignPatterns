@@ -70,6 +70,7 @@ def demo_prototype_pattern():
           f"{new_object.database_hostname}:{new_object.database_port}")
     print("Is the new object the same instance of the original object? "\
           f"{original_object is new_object}")
+    # pylint: disable=locally-disabled, comparison-with-itself
     print(f"Is the original the same instance of the original object? "\
           f"{original_object is original_object}")
 
