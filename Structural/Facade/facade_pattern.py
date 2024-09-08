@@ -48,7 +48,7 @@ class TransformData():
     def load():
         """Provides ability to transform data"""
 
-        print(f"Data transformed.")
+        print("Data transformed.")
 
 
 class LoadDataToDatabase():
