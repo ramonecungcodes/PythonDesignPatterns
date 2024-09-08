@@ -1,5 +1,6 @@
 """Module providing an example of the Singleton design pattern."""
 
+# pylint: disable=locally-disabled, too-few-public-methods, unused-private-member
 class DatabaseConnection():
     """ Demonstrates a class that will only ever instantiate one object. """
 
